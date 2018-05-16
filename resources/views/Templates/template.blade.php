@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   </head>
   <body>
-    {{-- {{dd($menus)}} --}}
+
     <div class="header-container">
 
       <div class="logo-container">
@@ -14,27 +14,25 @@
       </div>
 
       <div class="menu-container">
-        <ul>
+
           @foreach($menus as $menu)
-              <li class="menu-level-1"><a href="">{{$menu->menu_name}}</a>
+            <div class="dropdown">
+              <button class="dropbtn">{{$menu->menu_name}}</button>
+              <div class="dropdown-content">
                 @foreach($submenus as $submenu)
-
-                @if($submenu->menu_parent == $menu->menu_id)
-                  <span class="menu-level-2">{{$submenu->menu_name}}</span>
-                @endif
-
+                  @if($submenu->menu_parent == $menu->menu_id)
+                    <a href="#">{{$submenu->menu_name}}</a>
+                  @endif
                 @endforeach
-              </li>
+              </div>
+            </div>
           @endforeach
-        </ul>
+
       </div>
 
     </div>
 
     @yield('content')
-    <script type="text/javascript">
 
-    </script>
-    <script src="{{ asset('js/menus.js') }}"></script>
   </body>
 </html>
