@@ -31,5 +31,20 @@
 				</div>
 
 		</div>
+
+		<div class="section-title">
+			<h2>Best selling games</h2>
+		</div>
+
+		<div class="bestSellingGames-container">
+			@foreach($games as $game)
+				<div class="bestSellingGame-container">
+					<img src="{{$game->img}}">
+					<h3>{{$game->name}}</h3>
+					<p>Available on: {{$game->systems}}</p>
+				</div>
+			@endforeach
+		</div>
+
 	</div>
 @endsection

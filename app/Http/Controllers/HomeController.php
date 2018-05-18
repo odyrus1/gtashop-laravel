@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Menu;
 use App\News;
+use App\Games;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,9 @@ class HomeController extends Controller
 			$skip = 1;
 			$limit = $count - $skip;
 			$news = News::orderBy('date', 'desc')->skip($skip)->take($limit)->get();
-			// dd($lastNews);
-      return view('Main/home', ['menus' => $menus, 'submenus' => $submenus, 'lastNews' => $lastNews, 'news' => $news]);
+
+			$games = Games::orderBy('sales', 'desc')->get();
+			// dd($games);
+      return view('Main/home', ['menus' => $menus, 'submenus' => $submenus, 'lastNews' => $lastNews, 'news' => $news, 'games' => $games]);
     }
 }
