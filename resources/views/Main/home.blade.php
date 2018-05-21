@@ -38,11 +38,13 @@
 
 		<div class="bestSellingGames-container">
 			@foreach($games as $game)
-				<div class="bestSellingGame-container">
-					<img src="{{$game->img}}">
-					<h3>{{$game->name}}</h3>
-					<p>Available on: {{$game->systems}}</p>
-				</div>
+				<a class="bestSellingGame-link" href="{{ route('product.index', ['slug' => $game->getSlugAttribute()]) }}">
+					<div class="bestSellingGame-container">
+						<img src="{{$game->img}}">
+						<h3>{{$game->name}}</h3>
+						<p>Available on: {{$game->systems}}</p>
+					</div>
+				</a>
 			@endforeach
 		</div>
 

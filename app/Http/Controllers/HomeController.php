@@ -11,8 +11,6 @@ class HomeController extends Controller
 {
 	public function index()
     {
-			$menus = Menu::where('menu_level', 1)->get();
-			$submenus = Menu::where('menu_level', 2)->get();
 			$lastNews = News::orderBy('date', 'desc')->first();
 
 			$count = News::count();
@@ -22,6 +20,6 @@ class HomeController extends Controller
 
 			$games = Games::orderBy('sales', 'desc')->get();
 			// dd($games);
-      return view('Main/home', ['menus' => $menus, 'submenus' => $submenus, 'lastNews' => $lastNews, 'news' => $news, 'games' => $games]);
+      return view('Main/home', ['lastNews' => $lastNews, 'news' => $news, 'games' => $games]);
     }
 }

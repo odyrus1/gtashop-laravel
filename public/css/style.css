@@ -162,9 +162,69 @@
 }
 .bestSellingGame-container img {
   width: 100%;
+  cursor: pointer;
+}
+.bestSellingGame-container img:hover {
+  transform: translateY(-3px) rotate(.0001deg);
+}
+.bestSellingGame-link{
+  text-decoration: none;
+  color: black;
 }
 
 /* End home */
+/* Store */
+
+.store-container{
+  width: 100%;
+  text-align: center;
+}
+.products-container{
+  width: 80%;
+  margin: auto;
+}
+.product-container{
+  width: 25%;
+  height: 70vh;
+  display: inline-grid;
+  border: 2px solid black;
+  padding: 12px;
+  margin: 12px 6px 32px 6px;
+  text-align: left;
+}
+.product-container p{
+  margin: 0;
+}
+.product-container img{
+  width: 100%;
+}
+
+/* End store */
+/* Product */
+
+.gamepage-container{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.game-container{
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.gameImage-container{
+  width: 100%;
+}
+.gameImage-container img{
+  width: 80%;
+}
+.gameInfo-container{
+  width: 100%;
+  text-align: left;
+}
+
+/* End product */
 /* Footer */
 
 .footer-container{
@@ -215,3 +275,5 @@
 .footerLogo-container img{
   width: 80%;
 }
+
+/* End footer */

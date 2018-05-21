@@ -11,7 +11,7 @@
     <div class="header-container">
 
       <div class="logo-container">
-        <img src="{{ asset('images/rockstar-logo.png') }}" alt="rockstar-logo">
+        <a href="{{ route('home.index') }}"><img src="{{ asset('images/rockstar-logo.png') }}" alt="rockstar-logo"></a>
       </div>
 
       <div class="menu-container">
@@ -22,7 +22,7 @@
               <div class="dropdown-content">
                 @foreach($submenus as $submenu)
                   @if($submenu->menu_parent == $menu->menu_id)
-                    <a href="#">{{$submenu->menu_name}}</a>
+                    <a href="{{ route('store.index', ['slug' => $submenu->getSlugAttribute()]) }}">{{$submenu->menu_name}}</a>
                   @endif
                 @endforeach
               </div>

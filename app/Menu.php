@@ -8,4 +8,9 @@ class Menu extends Model
 {
 	public $timestamps = false;
     protected $table = 'menus';
+
+	public function getSlugAttribute()
+	{
+		return str_slug($this->menu_name, '-');
+	}
 }
