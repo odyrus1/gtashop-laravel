@@ -1,1 +1,3 @@
-"# gtashop-laravel-sass" 
+"# gtashop-laravel" 
+
+Projet d'entrainement sur Laravel
